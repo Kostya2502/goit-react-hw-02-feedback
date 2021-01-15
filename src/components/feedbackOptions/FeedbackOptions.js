@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     return (
         <>
             {options.map((option) => (
-                <button type="button" name={option} key={option} onClick={onLeaveFeedback}>{option}</button>
+                <button type="button" name={option} key={uuidv4()} onClick={onLeaveFeedback}>{option}</button>
             ))}
         </>
     );
